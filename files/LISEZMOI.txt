@@ -1,0 +1,9 @@
+Placez ici vos PDF, en gardant exactement ces noms de fichiers,
+sinon les boutons de téléchargement de la page d'accueil pointeront
+dans le vide.
+
+  bouhiere-tfb-boues-bruxelles.pdf
+  bouhiere-tfb-synthese.pdf
+  bouhiere-memoire-master.pdf
+
+Ce fichier peut être supprimé une fois les PDF déposés.

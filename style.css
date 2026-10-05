@@ -1,0 +1,204 @@
+/* =========================================================
+   Camille Bouhière — feuille de style commune
+   Inter est auto-hébergée dans /fonts, aucun appel externe.
+   ========================================================= */
+
+@font-face{font-family:'Inter';src:url('fonts/inter-latin-400-normal.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Inter';src:url('fonts/inter-latin-500-normal.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Inter';src:url('fonts/inter-latin-600-normal.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+
+:root{
+  --ivoire:#faf7f0;
+  --papier:#f2eee2;
+  --encre:#191919;
+  --marine:#12304c;
+  --marine-fonce:#0c2237;
+  --marine-clair:#2c5a83;
+  --plomb:#5c584f;
+  --filet:#cbc3b3;
+  --mesure:34rem;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+body{
+  margin:0;background:var(--ivoire);color:var(--encre);
+  font-family:var(--sans);font-size:17px;line-height:1.65;
+  font-feature-settings:'kern','liga';-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--marine);text-decoration:underline;text-underline-offset:.18em;text-decoration-thickness:.06em}
+a:hover{color:var(--marine-clair)}
+:focus-visible{outline:2px solid var(--marine);outline-offset:3px}
+
+.enveloppe{max-width:64rem;margin:0 auto;padding:0 1.75rem}
+.saut{position:absolute;left:-9999px}
+.saut:focus{position:static;display:inline-block;margin:1rem;padding:.5rem .75rem;background:var(--marine);color:#fff}
+
+/* ---------- Bandeau de navigation ---------- */
+.bandeau{border-bottom:1px solid var(--filet);background:var(--ivoire)}
+.bandeau .enveloppe{display:flex;flex-wrap:wrap;gap:.5rem 2rem;align-items:baseline;justify-content:space-between;padding-top:.9rem;padding-bottom:.9rem}
+.sceau{font-family:var(--serif);font-size:1rem;text-decoration:none;color:var(--encre)}
+.menu{display:flex;flex-wrap:wrap;gap:1.5rem;font-size:.86rem}
+.menu a{color:var(--plomb);text-decoration:none}
+.menu a:hover,.menu a[aria-current='page']{color:var(--marine);text-decoration:underline}
+
+/* ---------- En-tête d'accueil ---------- */
+.tete{padding:4rem 0 3rem}
+.tete-grille{display:grid;grid-template-columns:1fr 20rem;gap:3.5rem;align-items:start}
+h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.5rem,6.5vw,4.2rem);line-height:1.02;letter-spacing:-.015em;margin:0 0 .9rem;
+}
+h1 .prenom-second{display:block;font-size:.34em;letter-spacing:.02em;color:var(--plomb);margin-top:.65rem}
+.qualite{font-family:var(--serif);font-size:1.12rem;color:var(--marine);margin:0 0 1.4rem;max-width:30ch}
+.chapeau{max-width:var(--mesure);font-size:1.04rem;color:#2c2a26;margin:0 0 1.6rem}
+.attestation{font-size:.86rem;color:var(--plomb);margin:0 0 1.9rem;max-width:var(--mesure)}
+
+.portrait figure{margin:0}
+.portrait img{width:100%;border:1px solid var(--encre)}
+.legende{font-size:.76rem;color:var(--plomb);line-height:1.45;margin-top:.6rem;border-top:1px solid var(--filet);padding-top:.55rem}
+
+/* ---------- Diptyque des deux domaines ---------- */
+.diptyque{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--encre);margin-top:1rem}
+.volet{padding:1.4rem 1.6rem 0 0}
+.volet + .volet{border-left:1px solid var(--filet);padding-left:1.6rem}
+.periode{font-family:var(--serif);font-size:1.5rem;color:var(--marine);display:block;line-height:1.1}
+.volet h2{font-family:var(--sans);font-size:.95rem;font-weight:600;margin:.55rem 0 .4rem}
+.volet p{margin:0;font-size:.92rem;color:var(--plomb);line-height:1.55}
+
+/* ---------- Sections ---------- */
+.section{padding:3.5rem 0;border-top:1px solid var(--filet)}
+.entete-section{display:grid;grid-template-columns:11rem 1fr;gap:2.5rem;align-items:start}
+.rubrique{font-size:.8rem;color:var(--plomb);line-height:1.5;padding-top:.45rem}
+.rubrique span{display:block}
+.rubrique span + span{margin-top:.35rem}
+h2.titre{font-family:var(--serif);font-weight:400;font-size:clamp(1.65rem,3.4vw,2.15rem);line-height:1.2;margin:0 0 1.1rem;letter-spacing:-.01em}
+h3{font-family:var(--sans);font-size:.95rem;font-weight:600;margin:2rem 0 .5rem}
+.corps{max-width:var(--mesure)}
+.corps p{margin:0 0 1.05rem}
+.corps p:last-child{margin-bottom:0}
+
+.resume{
+  font-family:var(--serif);font-size:1.02rem;line-height:1.62;
+  background:var(--papier);border:1px solid var(--filet);
+  padding:1.6rem 1.75rem;margin:0 0 1.5rem;max-width:38rem;
+}
+.resume p{margin:0 0 1rem}
+.resume p:last-child{margin-bottom:0}
+.mention{font-size:.82rem;color:var(--plomb);max-width:var(--mesure);margin:.9rem 0 0}
+
+/* ---------- Boutons ---------- */
+.bouton{display:inline-block;font-size:.9rem;font-weight:500;padding:.7rem 1.4rem;background:var(--marine);color:#fff;text-decoration:none;border:1px solid var(--marine)}
+.bouton:hover{background:var(--marine-fonce);color:#fff}
+.bouton.creux{background:transparent;color:var(--marine)}
+.bouton.creux:hover{background:var(--marine);color:#fff}
+.actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:1.4rem}
+
+/* ---------- Axes de recherche ---------- */
+.axes{list-style:none;margin:0;padding:0;max-width:40rem}
+.axes li{border-top:1px solid var(--filet);padding:.85rem 0;display:grid;grid-template-columns:9.5rem 1fr;gap:1.5rem;align-items:baseline}
+.axes li:last-child{border-bottom:1px solid var(--filet)}
+.axes strong{font-weight:600;font-size:.9rem}
+.axes span{font-size:.92rem;color:var(--plomb)}
+
+/* ---------- Parcours ---------- */
+.parcours{list-style:none;margin:0;padding:0;max-width:42rem}
+.parcours li{display:grid;grid-template-columns:6.5rem 1fr;gap:2rem;padding:1.15rem 0;border-top:1px solid var(--filet)}
+.parcours li:last-child{border-bottom:1px solid var(--filet)}
+.annee{font-family:var(--serif);font-size:1.35rem;color:var(--marine);line-height:1.2}
+.parcours h3{margin:0 0 .25rem;font-size:1rem}
+.parcours p{margin:0;font-size:.92rem;color:var(--plomb)}
+
+/* ---------- Profils académiques ---------- */
+.profils{display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:0;margin-top:1.5rem;border-top:1px solid var(--filet);border-left:1px solid var(--filet)}
+.profils a{
+  display:block;padding:1rem 1.15rem;text-decoration:none;color:var(--encre);
+  border-right:1px solid var(--filet);border-bottom:1px solid var(--filet);background:transparent;
+}
+.profils a:hover{background:var(--marine);color:#fff}
+.profils a:hover .identifiant{color:#cfe0ee}
+.profils .service{display:block;font-size:.92rem;font-weight:600}
+.profils .identifiant{display:block;font-size:.8rem;color:var(--plomb);margin-top:.2rem;word-break:break-word}
+
+/* ---------- Lettre mensuelle ---------- */
+.lettre{border:1px solid var(--encre);padding:1.75rem;margin-top:2.5rem;max-width:38rem}
+.lettre h3{margin-top:0}
+.lettre p{font-size:.94rem;margin:0 0 1.1rem;color:#2c2a26}
+.champ{display:flex;flex-wrap:wrap;gap:.6rem}
+.champ input{flex:1 1 15rem;font-family:var(--sans);font-size:.95rem;padding:.66rem .8rem;border:1px solid var(--filet);background:#fff;color:var(--encre)}
+.champ input:focus{border-color:var(--marine);outline:none}
+.champ button{font-family:var(--sans);font-size:.9rem;font-weight:500;padding:.66rem 1.3rem;background:var(--marine);color:#fff;border:1px solid var(--marine);cursor:pointer}
+.champ button:hover{background:var(--marine-fonce)}
+.finesse{font-size:.78rem;color:var(--plomb);margin:.8rem 0 0}
+
+/* ---------- Contact ---------- */
+.coordonnees{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1.75rem;max-width:44rem}
+.coordonnees h3{margin-top:0}
+.coordonnees p{margin:0;font-size:.93rem;color:var(--plomb)}
+
+/* ---------- Pied de page ---------- */
+footer{border-top:1px solid var(--encre);padding:2rem 0 3rem;font-size:.82rem;color:var(--plomb)}
+.pied{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;justify-content:space-between;align-items:baseline}
+footer p{margin:0 0 .4rem;max-width:34rem}
+.pied-liens{display:flex;flex-wrap:wrap;gap:1.25rem}
+.pied-liens a{color:var(--plomb)}
+.pied-liens a:hover{color:var(--marine)}
+
+/* ---------- Page de texte long ---------- */
+.tete-page{padding:3.5rem 0 2.25rem;border-bottom:1px solid var(--encre)}
+.tete-page h1{font-size:clamp(2rem,5vw,3.1rem);max-width:22ch;margin-bottom:1rem}
+.datation{font-size:.85rem;color:var(--plomb);margin:0}
+.article{display:grid;grid-template-columns:13rem 1fr;gap:3rem;padding:3rem 0}
+.sommaire{position:sticky;top:2rem;align-self:start;font-size:.85rem;line-height:1.5}
+.sommaire p{margin:0 0 .7rem;font-weight:600;font-size:.82rem}
+.sommaire ol{list-style:none;margin:0;padding:0}
+.sommaire li{margin:0 0 .45rem}
+.sommaire a{color:var(--plomb);text-decoration:none}
+.sommaire a:hover{color:var(--marine);text-decoration:underline}
+.texte{max-width:38rem}
+.texte > section{padding-top:2.25rem;margin-top:2.25rem;border-top:1px solid var(--filet)}
+.texte > section:first-of-type{padding-top:0;margin-top:0;border-top:0}
+.texte h2{font-family:var(--serif);font-weight:400;font-size:1.6rem;line-height:1.22;margin:0 0 1rem;letter-spacing:-.01em}
+.texte p{margin:0 0 1.05rem}
+.texte p:last-child{margin-bottom:0}
+.texte ul{margin:0 0 1.05rem;padding-left:1.15rem}
+.texte li{margin-bottom:.5rem}
+.texte li:last-child{margin-bottom:0}
+.encadre{background:var(--papier);border:1px solid var(--filet);padding:1.4rem 1.5rem;margin:0 0 1.2rem}
+.encadre p:last-child{margin-bottom:0}
+.identite{margin:0 0 1.05rem}
+.identite dt{font-size:.8rem;color:var(--plomb);margin-bottom:.15rem}
+.identite dd{margin:0 0 .9rem;font-size:.98rem}
+.identite dd:last-child{margin-bottom:0}
+.discret{font-size:.85rem;color:var(--plomb)}
+
+/* ---------- Adaptations ---------- */
+@media (max-width:60rem){
+  .tete-grille{grid-template-columns:1fr 16rem;gap:2.5rem}
+}
+@media (max-width:52rem){
+  .tete{padding:2.5rem 0 2rem}
+  .tete-grille{grid-template-columns:1fr;gap:2rem}
+  .portrait{max-width:17rem}
+  .entete-section{grid-template-columns:1fr;gap:1rem}
+  .rubrique{padding-top:0;display:flex;flex-wrap:wrap;gap:.35rem 1.25rem}
+  .rubrique span + span{margin-top:0}
+  .diptyque{grid-template-columns:1fr}
+  .volet{padding-right:0;padding-bottom:1.2rem}
+  .volet + .volet{border-left:0;border-top:1px solid var(--filet);padding-left:0;padding-top:1.4rem}
+  .axes li,.parcours li{grid-template-columns:1fr;gap:.2rem}
+  .article{grid-template-columns:1fr;gap:1.75rem;padding:2.25rem 0}
+  .sommaire{position:static;border:1px solid var(--filet);padding:1.1rem 1.25rem}
+}
+
+@media print{
+  body{background:#fff;font-family:'Times New Roman',Times,serif;font-size:12pt;color:#000}
+  .bandeau,.actions,.lettre,.sommaire,.profils{display:none}
+  .tete-grille,.article,.entete-section{display:block}
+  a{color:#000;text-decoration:none}
+}
