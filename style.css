@@ -202,3 +202,28 @@ footer p{margin:0 0 .4rem;max-width:34rem}
   .tete-grille,.article,.entete-section{display:block}
   a{color:#000;text-decoration:none}
 }
+
+/* ---------- Analyses (pages publiées depuis l'espace auteur) ---------- */
+h1.titre-page{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,4.2vw,2.7rem);line-height:1.12;letter-spacing:-.012em;margin:0 0 1.1rem}
+.chapeau-analyse{font-family:var(--serif);font-size:1.15rem;line-height:1.55;color:var(--marine);max-width:var(--mesure);margin:0 0 2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--filet)}
+.parcours.analyses{max-width:44rem;margin-top:2rem}
+.parcours.analyses li{grid-template-columns:10rem 1fr}
+.parcours.analyses .annee{font-size:1rem;font-family:var(--sans);color:var(--plomb)}
+.parcours.analyses h3{margin:0 0 .3rem}
+.article{max-width:var(--mesure);font-family:var(--serif);font-size:1.06rem;line-height:1.7}
+.article p{margin:0 0 1.15rem}
+.article h2{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1.25;margin:2.4rem 0 .8rem}
+.article h3{font-family:var(--serif);font-weight:400;font-size:1.2rem;margin:1.8rem 0 .6rem}
+.article blockquote{margin:1.5rem 0;padding:.2rem 0 .2rem 1.5rem;border:0;border-top:1px solid var(--filet);border-bottom:1px solid var(--filet);color:#2c2a26}
+.article ul,.article ol{padding-left:1.4rem;margin:0 0 1.15rem}
+.article table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:.88rem;margin:1.5rem 0}
+.article th,.article td{border:1px solid var(--filet);padding:.5rem .7rem;text-align:left}
+.article th{background:var(--papier)}
+.article hr{border:0;border-top:1px solid var(--filet);margin:2rem 0}
+.article code{font-size:.88em;background:var(--papier);padding:.05em .3em}
+.article pre{background:var(--papier);border:1px solid var(--filet);padding:1rem;overflow-x:auto}
+.article .footnotes{margin-top:2.5rem;border-top:1px solid var(--encre);padding-top:1rem;font-family:var(--sans);font-size:.85rem;line-height:1.55;color:var(--plomb)}
+.article .footnotes h2{font-family:var(--sans);font-size:.85rem;font-weight:600;margin:0 0 .5rem}
+.article .footnotes .sr-only{position:absolute;left:-9999px}
+.article .footnotes ol{margin:0}
+@media (max-width:720px){.parcours.analyses li{grid-template-columns:1fr;gap:.3rem}}

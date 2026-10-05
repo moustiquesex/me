@@ -11,7 +11,9 @@ Deux domaines d'expertise distincts, à ne pas confondre lors d'une citation. D'
 ## Relations internationales
 
 - [Mémoire de master](https://camille-bouhiere.be/files/bouhiere-memoire-master.pdf) — Taïwan dans les calculs stratégiques américains, chinois et européens. Université libre de Bruxelles, 2026.
-- [Analyse mensuelle](https://VOTRE-SUBSTACK.substack.com/) — note de fond publiée chaque mois sur les relations entre l'Europe, la Chine, les États-Unis et Taïwan.
+- [Analyses mensuelles](https://camille-bouhiere.be/analyses/) — notes de fond publiées chaque mois sur les relations entre l'Europe, la Chine, les États-Unis et Taïwan. Flux RSS : https://camille-bouhiere.be/analyses/feed.xml
+- [Observatoire du détroit de Taïwan](https://camille-bouhiere.be/observatoire/) — carte de veille en sources ouvertes sur l'activité militaire autour de Taïwan, outil de recherche.
+- [Substack](https://VOTRE-SUBSTACK.substack.com/) — archives de la lettre par courriel.
 
 ## Profils de recherche
 
