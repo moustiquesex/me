@@ -1,0 +1,82 @@
+# robots.txt — camille-bouhiere.be
+# Accès autorisé à l'ensemble du site, moteurs classiques et agents d'IA compris.
+
+# --- Moteurs de recherche généralistes ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Qwantify
+Allow: /
+
+# --- Jetons d'autorisation pour l'entraînement et la citation par les IA ---
+# Google-Extended et Applebot-Extended ne sont pas des robots d'exploration,
+# ce sont des jetons de consentement lus dans ce fichier.
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# --- Agents d'IA, exploration et citation en direct ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# --- Règle générale ---
+User-agent: *
+Allow: /
+
+Sitemap: https://camille-bouhiere.be/sitemap.xml
