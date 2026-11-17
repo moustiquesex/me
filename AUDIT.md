@@ -44,3 +44,16 @@ Sources officielles consultées
 ## Vérifications exécutées
 
 Construction des pages FR/EN et contrôle de 173 liens et ressources locaux, métadonnées, JSON-LD et configuration CMS. Vérification navigateur du rendu d’accueil, des filtres par format, année et discipline, du lien de demande de PDF et de la copie APA avec un article technique temporaire ensuite supprimé. Les citations BibTeX sont affichées avec leurs champs auteur, titre, année et URL. Le traitement d’un vrai PDF sur Linux et l’intégration CMS authentifiée restent non vérifiés.
+
+
+## Mise à jour avec l’éditeur privé
+
+L’éditeur ajouté est un service local lié exclusivement à 127.0.0.1. Les API exigent un jeton de session aléatoire, les écritures vérifient Origin, et Host est fixé pour limiter le DNS rebinding. Le jeton local n’est pas une clé GitHub. Git Credential Manager gère l’accès au dépôt en dehors du navigateur. Aucun secret de publication n’est embarqué dans le site public.
+
+L’upload local exige application/pdf, limite le flux à 10 Mio et analyse les octets avec pdf-lib avant enregistrement. Le contenu actif reconnu est refusé et le nom reçu est remplacé par un UUID. Sur le serveur de construction, libmagic et qpdf constituent une deuxième validation. Les PDF restent des documents publics après envoi et ces vérifications ne constituent pas une analyse antivirus exhaustive.
+
+Le HTML des articles est nettoyé par sanitize-html dans l’éditeur et dans le générateur. Seules des balises de texte, des liens HTTP/HTTPS/mailto et des classes de taille/alignement sont autorisées. Scripts, styles arbitraires, images externes et gestionnaires d’événements sont supprimés. Le collage dans l’éditeur est en texte simple.
+
+Tests effectués sur l’API locale : rejet d’un contenu non PDF, d’un mauvais Content-Type, d’une origine tierce et d’un fichier supérieur à 10 Mio. Acceptation d’un PDF de test analysé, enregistré sous un nom aléatoire puis supprimé. Vérification navigateur de la rédaction et de l’alignement justifié. Les dépendances installées ont été auditées par npm avec zéro vulnérabilité signalée à cette date. La construction vérifie 20 pages HTML et 302 liens/ressources locaux après ajout des quatre notices.
+
+L’accès est privé à cet ordinateur et à ses utilisateurs locaux. Un portail utilisable depuis d’autres appareils demanderait une authentification distante et un hébergement serveur. Pages CMS reste une alternative externe soumise à sa propre authentification. Le service local reste actif tant que sa fenêtre de lancement est ouverte.
