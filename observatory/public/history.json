@@ -1,0 +1,523 @@
+{
+  "title": "Taiwan ADIZ historical sample — August 2022",
+  "retrieved": "2026-11-18",
+  "period": [
+    "2022-08-01",
+    "2022-08-31"
+  ],
+  "citation": "Gerald C. Brown, Benjamin Lewis, Taiwan ADIZ Violations, PLATracker, Taiwan ADIZ Violations Tracker, 2024",
+  "source": "https://docs.google.com/spreadsheets/d/1qbfYF0VgDBJoFZN5elpZwNTiKZ4nvCUcs5a7oYwm52g/edit",
+  "method": "Daily aggregation of the # of Aircraft field in the ADIZ Data tab, limited to August 2022. Counts describe reported aircraft sorties, not distinct airframes. Location labels are retained; no tracks or coordinates are inferred. No ships or total surrounding-region aircraft are inferred. Missing days would remain null.",
+  "days": [
+    {
+      "date": "2022-08-01",
+      "aircraft": 4,
+      "locations": {
+        "Southwest ADIZ": 4
+      },
+      "types": {
+        "J-16": 4
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80158&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-02",
+      "aircraft": 21,
+      "locations": {
+        "Southwest ADIZ": 21
+      },
+      "types": {
+        "J-11": 8,
+        "J-16": 10,
+        "KJ-500": 1,
+        "Y-8 ELINT": 1,
+        "Y-9 EW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80164&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-03",
+      "aircraft": 27,
+      "locations": {
+        "Median Line": 22,
+        "Southwest ADIZ": 5
+      },
+      "types": {
+        "J-11": 6,
+        "J-16": 5,
+        "SU-30": 16
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80167&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-04",
+      "aircraft": 22,
+      "locations": {
+        "Median Line": 22
+      },
+      "types": {
+        "J-11": 8,
+        "J-16": 2,
+        "SU-30": 12
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80175&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-05",
+      "aircraft": 49,
+      "locations": {
+        "Southwest ADIZ": 19,
+        "Median Line": 30
+      },
+      "types": {
+        "J-10": 7,
+        "J-11": 6,
+        "J-16": 10,
+        "SU-30": 24,
+        "Y-8 ASW": 1,
+        "Y-8 EW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80183&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-06",
+      "aircraft": 20,
+      "locations": {
+        "Median Line": 14,
+        "Southwest ADIZ": 6
+      },
+      "types": {
+        "J-11": 4,
+        "J-16": 4,
+        "SU-30": 10,
+        "Y-20 Aerial Refuel": 1,
+        "Y-8 ASW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80189&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-07",
+      "aircraft": 22,
+      "locations": {
+        "Southwest ADIZ": 10,
+        "Median Line": 12
+      },
+      "types": {
+        "H-6": 3,
+        "J-11": 4,
+        "J-16": 6,
+        "SU-30": 8,
+        "Y-8 ASW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80193&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-08",
+      "aircraft": 21,
+      "locations": {
+        "Median Line": 14,
+        "Southwest ADIZ": 7
+      },
+      "types": {
+        "J-11": 6,
+        "J-16": 4,
+        "JH-7": 2,
+        "Ka-28 ASW": 1,
+        "SU-30": 8
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80197&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-09",
+      "aircraft": 16,
+      "locations": {
+        "Median Line": 16
+      },
+      "types": {
+        "J-11": 4,
+        "J-16": 4,
+        "SU-30": 8
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80212&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-10",
+      "aircraft": 17,
+      "locations": {
+        "Median Line": 17
+      },
+      "types": {
+        "J-11": 8,
+        "SU-30": 9
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80214&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-11",
+      "aircraft": 11,
+      "locations": {
+        "Median Line": 11
+      },
+      "types": {
+        "J-11": 4,
+        "JH-7": 1,
+        "SU-30": 6
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80218&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-12",
+      "aircraft": 10,
+      "locations": {
+        "Median Line": 6,
+        "Southwest ADIZ": 4
+      },
+      "types": {
+        "J-10": 2,
+        "J-16": 4,
+        "SU-30": 4
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80222&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-13",
+      "aircraft": 13,
+      "locations": {
+        "Median Line": 8,
+        "Southwest ADIZ": 5
+      },
+      "types": {
+        "J-10": 2,
+        "J-16": 4,
+        "SU-30": 6,
+        "Y-8 ASW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80223&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-14",
+      "aircraft": 11,
+      "locations": {
+        "Median Line": 10,
+        "Southwest ADIZ": 1
+      },
+      "types": {
+        "J-10": 2,
+        "J-11": 2,
+        "J-16": 2,
+        "KJ-500": 1,
+        "SU-30": 4
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80225&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-15",
+      "aircraft": 15,
+      "locations": {
+        "Median Line": 14,
+        "Northeast ADIZ": 1
+      },
+      "types": {
+        "J-11": 2,
+        "J-16": 4,
+        "SU-30": 8,
+        "Z-9 ASW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80230&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-16",
+      "aircraft": 10,
+      "locations": {
+        "Median Line": 7,
+        "Southwest ADIZ": 3
+      },
+      "types": {
+        "J-11": 3,
+        "J-16": 2,
+        "SU-30": 4,
+        "Y-8 ELINT": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80232&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-17",
+      "aircraft": 5,
+      "locations": {
+        "Median Line": 4,
+        "Southwest ADIZ": 1
+      },
+      "types": {
+        "J-11": 2,
+        "SU-30": 2,
+        "Y-8 ASW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80237&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-18",
+      "aircraft": 25,
+      "locations": {
+        "Southwest ADIZ": 6,
+        "Median Line": 19
+      },
+      "types": {
+        "H-6": 2,
+        "J-10": 4,
+        "J-16": 6,
+        "SU-30": 12,
+        "Y-8 EW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80243&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-19",
+      "aircraft": 8,
+      "locations": {
+        "Median Line": 8
+      },
+      "types": {
+        "J-11": 2,
+        "JH-7": 4,
+        "SU-30": 2
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80246&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-20",
+      "aircraft": 7,
+      "locations": {
+        "Median Line": 4,
+        "Southwest ADIZ": 3
+      },
+      "types": {
+        "J-11": 2,
+        "JH-7": 2,
+        "SU-30": 2,
+        "Y-8 ASW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80249&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-21",
+      "aircraft": 5,
+      "locations": {
+        "Median Line": 5
+      },
+      "types": {
+        "J-10": 2,
+        "SU-30": 2,
+        "Y-8 ASW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80251&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-22",
+      "aircraft": 11,
+      "locations": {
+        "Median Line": 4,
+        "Southwest ADIZ": 7
+      },
+      "types": {
+        "J-10": 2,
+        "J-11": 2,
+        "J-16": 1,
+        "JH-7": 2,
+        "SU-30": 2,
+        "Y-8 ASW": 1,
+        "Y-8 RECCE": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80255&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-23",
+      "aircraft": 9,
+      "locations": {
+        "Median Line": 5,
+        "Southwest ADIZ": 4
+      },
+      "types": {
+        "J-11": 2,
+        "J-16": 4,
+        "SU-30": 3
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80274&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-24",
+      "aircraft": 2,
+      "locations": {
+        "Median Line": 2
+      },
+      "types": {
+        "SU-30": 2
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80279&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-25",
+      "aircraft": 9,
+      "locations": {
+        "Southwest ADIZ": 4,
+        "Median Line": 5
+      },
+      "types": {
+        "J-11": 4,
+        "JH-7": 2,
+        "SU-30": 3
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80286&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-26",
+      "aircraft": 18,
+      "locations": {
+        "Southwest ADIZ": 3,
+        "Median Line": 15
+      },
+      "types": {
+        "J-10": 3,
+        "J-11": 3,
+        "J-16": 4,
+        "SU-30": 8
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80289&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-27",
+      "aircraft": 13,
+      "locations": {
+        "Southwest ADIZ": 6,
+        "Median Line": 7
+      },
+      "types": {
+        "H-6": 4,
+        "J-10": 2,
+        "J-16": 7
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80291&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-28",
+      "aircraft": 10,
+      "locations": {
+        "Median Line": 7,
+        "Southwest ADIZ": 3
+      },
+      "types": {
+        "J-10": 2,
+        "J-11": 3,
+        "J-16": 2,
+        "SU-30": 1,
+        "WZ-10 Attack": 1,
+        "Y-8 ASW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80296&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-29",
+      "aircraft": 12,
+      "locations": {
+        "Median Line": 12
+      },
+      "types": {
+        "J-11": 2,
+        "J-16": 2,
+        "SU-30": 8
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80303&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-30",
+      "aircraft": 8,
+      "locations": {
+        "Southwest ADIZ": 6,
+        "Median Line": 2
+      },
+      "types": {
+        "J-11": 2,
+        "J-16": 2,
+        "JH-7": 1,
+        "SU-30": 2,
+        "Y-8 ASW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80305&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    },
+    {
+      "date": "2022-08-31",
+      "aircraft": 15,
+      "locations": {
+        "Southwest ADIZ": 15
+      },
+      "types": {
+        "J-16": 9,
+        "JH-7": 4,
+        "Y-8 ASW": 1,
+        "Y-8 EW": 1
+      },
+      "sources": [
+        "https://www.mnd.gov.tw/Publish.aspx?p=80310&title=%e5%9c%8b%e9%98%b2%e6%b6%88%e6%81%af&SelectStyle=%e5%8d%b3%e6%99%82%e8%bb%8d%e4%ba%8b%e5%8b%95%e6%85%8b"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+import {build} from 'esbuild';
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.dirname(fileURLToPath(import.meta.url));
+const out=path.resolve(root,'../dist/observatory');
+fs.mkdirSync(out,{recursive:true});
+await build({entryPoints:[path.join(root,'src/main.jsx')],bundle:true,external:['/assets/*'],minify:true,format:'esm',outfile:path.join(out,'app.js'),loader:{'.png':'dataurl'},define:{'process.env.NODE_ENV':'"production"'}});
+const html=fs.readFileSync(path.join(root,'index.html'),'utf8').replace('<script type="module" src="/src/main.jsx"></script>','<link rel="stylesheet" href="/observatory/app.css"><script type="module" src="/observatory/app.js"></script>');
+fs.writeFileSync(path.join(out,'index.html'),html);
+fs.copyFileSync(path.join(root,'public/history.json'),path.join(out,'history.json'));
+console.log('Built historical observatory at /observatory/');

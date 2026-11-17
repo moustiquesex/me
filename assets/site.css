@@ -43,3 +43,6 @@ p{hyphens:auto}.prose p,.topic p,.pub-row p,.intro-strip p{text-align:justify;te
 @media(max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr) 230px;gap:32px}.hero-portrait{height:310px}.navlinks{gap:16px}}
 @media(max-width:720px){.hero-grid{grid-template-columns:1fr;gap:24px}.hero-copy{padding:36px 0 0}.hero-portrait{width:210px;height:280px;margin:0 0 10px}.hero h1{font-size:42px}.hero .statement{font-size:23px}.pub-row{grid-template-columns:1fr}.pub-read{grid-column:1}.pub-row .meta{flex-wrap:wrap}.section-head h2,.profile-grid h2{font-size:28px}.section{padding:32px 0}.language-hint .wrap{gap:10px}.language-hint button{margin-left:0}.contact .wrap{display:block}.contact-email{font-size:16px}.project-section h2{font-size:26px}}
 .hero .statement,.hero-method{hyphens:none}
+
+/* Requested editorial alignment: prose justified; headings and controls unchanged. */
+p,.prose p,.topic p,.pub-row p,.intro-strip p,.hero .statement,.hero-method,.publication-context{text-align:justify;text-justify:inter-word;hyphens:auto}
