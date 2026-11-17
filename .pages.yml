@@ -339,8 +339,18 @@
             },
             {
               "name": "body",
-              "label": "Texte public (paragraphes séparés par une ligne vide)",
-              "type": "text"
+              "label": "Texte / commentaire",
+              "type": "rich-text",
+              "options": {
+                "format": "html",
+                "media": false
+              }
+            },
+            {
+              "name": "bodyFormat",
+              "type": "string",
+              "default": "html",
+              "hidden": true
             }
           ]
         },
@@ -361,10 +371,30 @@
             },
             {
               "name": "body",
-              "label": "Texte public (paragraphes séparés par une ligne vide)",
-              "type": "text"
+              "label": "Texte / commentaire",
+              "type": "rich-text",
+              "options": {
+                "format": "html",
+                "media": false
+              }
+            },
+            {
+              "name": "bodyFormat",
+              "type": "string",
+              "default": "html",
+              "hidden": true
             }
           ]
+        },
+        {
+          "name": "source",
+          "label": "Lien de la publication originale (optionnel)",
+          "type": "string"
+        },
+        {
+          "name": "publisher",
+          "label": "Organisme éditeur (optionnel)",
+          "type": "string"
         }
       ]
     }

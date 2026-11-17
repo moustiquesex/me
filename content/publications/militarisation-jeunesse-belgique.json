@@ -1,0 +1,27 @@
+{
+  "slug": "militarisation-jeunesse-belgique",
+  "published": true,
+  "date": "2026-10-09",
+  "type": "analysis",
+  "discipline": "Security and defence",
+  "access": "none",
+  "source": "https://serviceforpeace.be/en/la-militarisation-de-la-jeunesse-en-belgique/",
+  "publisher": "Service for Peace",
+  "authors": [
+    "Idriss Bouhière"
+  ],
+  "role": {
+    "fr": "Rédaction par Idriss Bouhière dans le cadre de son stage à la CNAPD. Publication diffusée par Service for Peace.",
+    "en": "Written by Idriss Bouhière during his CNAPD internship. Published by Service for Peace."
+  },
+  "fr": {
+    "title": "La militarisation de la jeunesse en Belgique",
+    "summary": "Cette note examine la place de l’institution militaire dans les parcours des jeunes en Belgique. Elle analyse le recrutement, les dispositifs scolaires et universitaires, les activités de jeunesse et la communication publique comme différentes dimensions d’un même processus.",
+    "body": ""
+  },
+  "en": {
+    "title": "The militarisation of young people in Belgium",
+    "summary": "This paper examines the military’s place in young people’s lives in Belgium. It considers recruitment, schools, universities, youth activities and public communication as interconnected dimensions of militarisation.",
+    "body": ""
+  }
+}

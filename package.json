@@ -5,9 +5,14 @@
   "scripts": {
     "build": "node scripts/validate-pdfs.mjs && node scripts/build.mjs",
     "check": "node scripts/check.mjs",
-    "preview": "node scripts/serve.mjs"
+    "preview": "node scripts/serve.mjs",
+    "editor": "node scripts/editor.mjs"
   },
   "engines": {
     "node": ">=22"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "sanitize-html": "^2.18.2"
   }
 }

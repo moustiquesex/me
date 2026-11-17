@@ -1,0 +1,27 @@
+{
+  "slug": "depenses-militaires-contexte-economique-belge",
+  "published": true,
+  "date": "2026-04-27",
+  "type": "analysis",
+  "discipline": "Security and defence",
+  "access": "none",
+  "source": "https://www.cnapd.be/depenses-militaires-et-contexte-economique-belge/",
+  "publisher": "CNAPD",
+  "authors": [
+    "Idriss Bouhière"
+  ],
+  "role": {
+    "fr": "Article d’Idriss Bouhière, rédigé durant son stage à la CNAPD.",
+    "en": "Article by Idriss Bouhière, written during his CNAPD internship."
+  },
+  "fr": {
+    "title": "Dépenses militaires et contexte économique belge",
+    "summary": "À partir de la dégradation de la note souveraine belge, l’article analyse les tensions entre augmentation des dépenses militaires, trajectoire de la dette et objectifs d’assainissement budgétaire. Il met ces choix en perspective avec leurs conséquences sociales.",
+    "body": ""
+  },
+  "en": {
+    "title": "Military spending and Belgium’s economic context",
+    "summary": "Starting from Belgium’s sovereign credit downgrade, this article examines tensions between rising military expenditure, public debt and fiscal consolidation targets, and considers their social implications.",
+    "body": ""
+  }
+}
