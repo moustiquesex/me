@@ -1,0 +1,92 @@
+{
+  "name": "Idriss Bouhière",
+  "url": "https://bouhiere.eu",
+  "ready": true,
+  "email": "idriss.bouhiere@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/idriss-bouhi%C3%A8re-a36598256/",
+  "fr": {
+    "role": "Affaires européennes & relations internationales",
+    "headline": "Analyse des politiques européennes\net de sécurité internationale.",
+    "intro": "Une approche des affaires européennes et internationales nourrie par l’histoire, l’analyse des politiques de sécurité et l’étude de la politique étrangère.",
+    "bio": "Formé en histoire et en sciences politiques à l’Université libre de Bruxelles, je m’intéresse aux politiques de sécurité européennes, aux relations internationales et aux équilibres stratégiques en Indo-Pacifique.\n\nMon mémoire de master porte sur la politique étrangère américaine envers Taïwan entre 2017 et 2026. À la CNAPD, mon stage en analyse des politiques de paix et de sécurité m’a conduit à travailler sur la sécurité européenne, les dépenses militaires et les enjeux de remilitarisation.",
+    "approach": "Analyse documentaire, critique des sources et mise en perspective historique des politiques publiques.",
+    "education": [
+      {
+        "year": "2024–2026",
+        "title": "Master en sciences politiques — relations internationales",
+        "institution": "Université libre de Bruxelles",
+        "details": "Finalité spécialisée : sécurité, paix, conflits. Mémoire : « Taïwan depuis Washington. Path dependency, quasi-alliance et ambiguïté stratégique dans la politique étrangère américaine de 2017 à 2026 »."
+      },
+      {
+        "year": "2021–2024",
+        "title": "Bachelier en histoire",
+        "institution": "Université libre de Bruxelles",
+        "details": "Passerelle vers les sciences politiques en 2023–2024. Critique des sources, recherche documentaire et méthodes historiques."
+      },
+      {
+        "year": "2026",
+        "title": "Communication internationale et Asie de l’Est",
+        "institution": "Formation complémentaire · Coursera",
+        "details": "Communication internationale, analyse des médias et identification de la désinformation."
+      }
+    ],
+    "experience": [
+      {
+        "year": "2026",
+        "title": "Stage en analyse des politiques de paix et de sécurité",
+        "institution": "CNAPD · Bruxelles · janvier–avril",
+        "details": "Recherche et rédaction sur la sécurité européenne, les dépenses militaires belges, la résistance civile et la remilitarisation. Contribution à des documents d’analyse et de sensibilisation."
+      },
+      {
+        "year": "2024",
+        "title": "Tutorat pédagogique bénévole",
+        "institution": "Schola ULB · Bruxelles · janvier–juin",
+        "details": "Accompagnement scolaire, préparation au CEB et transmission de notions complexes à des publics diversifiés."
+      }
+    ],
+    "languages": "Français : langue maternelle. Anglais : C1 à l’oral et à l’écrit, C2 en compréhension (niveaux déclarés dans le CV)."
+  },
+  "en": {
+    "role": "European affairs & international relations",
+    "headline": "European policy and\ninternational security analysis.",
+    "intro": "An approach to European and international affairs informed by history, security policy analysis and the study of foreign policy.",
+    "bio": "With a background in history and political science at the Université libre de Bruxelles, my interests lie in European security policy, international relations and the strategic balance in the Indo-Pacific.\n\nMy master’s dissertation examines US foreign policy towards Taiwan between 2017 and 2026. During my internship in peace and security policy analysis at CNAPD, I worked on European security, military expenditure and remilitarisation.",
+    "approach": "Documentary research, source criticism and historical context for public policy analysis.",
+    "education": [
+      {
+        "year": "2024–2026",
+        "title": "Master’s in Political Science — International Relations",
+        "institution": "Université libre de Bruxelles",
+        "details": "Specialisation: security, peace and conflict. Dissertation: “Taiwan from Washington: path dependency, quasi-alliance and strategic ambiguity in US foreign policy, 2017–2026” (original in French)."
+      },
+      {
+        "year": "2021–2024",
+        "title": "Bachelor’s in History",
+        "institution": "Université libre de Bruxelles",
+        "details": "Bridging programme in political science, 2023–2024. Source criticism, documentary research and historical methods."
+      },
+      {
+        "year": "2026",
+        "title": "International communication and East Asia",
+        "institution": "Additional training · Coursera",
+        "details": "International communication, media analysis and identifying disinformation."
+      }
+    ],
+    "experience": [
+      {
+        "year": "2026",
+        "title": "Internship in peace and security policy analysis",
+        "institution": "CNAPD · Brussels · January–April",
+        "details": "Research and writing on European security, Belgian military expenditure, civil resistance and remilitarisation. Contributions to analytical and awareness-raising material."
+      },
+      {
+        "year": "2024",
+        "title": "Volunteer educational tutor",
+        "institution": "Schola ULB · Brussels · January–June",
+        "details": "Learning support, preparation for the CEB primary education certificate and explaining complex concepts to diverse groups."
+      }
+    ],
+    "languages": "French: native. English: C1 speaking and writing, C2 listening and reading (self-reported CV levels)."
+  },
+  "orcid": "https://orcid.org/0009-0005-9016-2971"
+}

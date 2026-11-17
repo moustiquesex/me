@@ -1,0 +1,372 @@
+{
+  "media": {
+    "input": "uploads",
+    "output": "/uploads",
+    "extensions": [
+      "pdf"
+    ],
+    "rename": "random"
+  },
+  "content": [
+    {
+      "name": "site",
+      "label": "Profil, formation et réglages",
+      "type": "file",
+      "path": "content/site.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nom public",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "label": "Domaine HTTPS",
+          "type": "string"
+        },
+        {
+          "name": "ready",
+          "label": "Autoriser la mise en ligne après validation des textes",
+          "type": "boolean"
+        },
+        {
+          "name": "email",
+          "label": "Adresse e-mail publique",
+          "type": "string"
+        },
+        {
+          "name": "linkedin",
+          "label": "Lien LinkedIn (optionnel)",
+          "type": "string"
+        },
+        {
+          "name": "fr",
+          "label": "Version française",
+          "type": "object",
+          "fields": [
+            {
+              "name": "role",
+              "label": "Positionnement",
+              "type": "string"
+            },
+            {
+              "name": "headline",
+              "label": "Accroche (deux lignes)",
+              "type": "text"
+            },
+            {
+              "name": "intro",
+              "label": "Introduction",
+              "type": "text"
+            },
+            {
+              "name": "bio",
+              "label": "Présentation (paragraphes séparés par une ligne vide)",
+              "type": "text"
+            },
+            {
+              "name": "approach",
+              "label": "Méthode",
+              "type": "text"
+            },
+            {
+              "name": "education",
+              "label": "Formation",
+              "type": "object",
+              "list": true,
+              "fields": [
+                {
+                  "name": "year",
+                  "label": "Dates",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "Intitulé",
+                  "type": "string"
+                },
+                {
+                  "name": "institution",
+                  "label": "Établissement / organisation",
+                  "type": "string"
+                },
+                {
+                  "name": "details",
+                  "label": "Description",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "experience",
+              "label": "Expérience",
+              "type": "object",
+              "list": true,
+              "fields": [
+                {
+                  "name": "year",
+                  "label": "Dates",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "Intitulé",
+                  "type": "string"
+                },
+                {
+                  "name": "institution",
+                  "label": "Établissement / organisation",
+                  "type": "string"
+                },
+                {
+                  "name": "details",
+                  "label": "Description",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "languages",
+              "label": "Langues",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "en",
+          "label": "English version",
+          "type": "object",
+          "fields": [
+            {
+              "name": "role",
+              "label": "Positionnement",
+              "type": "string"
+            },
+            {
+              "name": "headline",
+              "label": "Accroche (deux lignes)",
+              "type": "text"
+            },
+            {
+              "name": "intro",
+              "label": "Introduction",
+              "type": "text"
+            },
+            {
+              "name": "bio",
+              "label": "Présentation (paragraphes séparés par une ligne vide)",
+              "type": "text"
+            },
+            {
+              "name": "approach",
+              "label": "Méthode",
+              "type": "text"
+            },
+            {
+              "name": "education",
+              "label": "Formation",
+              "type": "object",
+              "list": true,
+              "fields": [
+                {
+                  "name": "year",
+                  "label": "Dates",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "Intitulé",
+                  "type": "string"
+                },
+                {
+                  "name": "institution",
+                  "label": "Établissement / organisation",
+                  "type": "string"
+                },
+                {
+                  "name": "details",
+                  "label": "Description",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "experience",
+              "label": "Expérience",
+              "type": "object",
+              "list": true,
+              "fields": [
+                {
+                  "name": "year",
+                  "label": "Dates",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "Intitulé",
+                  "type": "string"
+                },
+                {
+                  "name": "institution",
+                  "label": "Établissement / organisation",
+                  "type": "string"
+                },
+                {
+                  "name": "details",
+                  "label": "Description",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "name": "languages",
+              "label": "Langues",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "publications",
+      "label": "Publications",
+      "type": "collection",
+      "path": "content/publications",
+      "format": "json",
+      "filename": "{fields.slug}.json",
+      "view": {
+        "primary": "slug",
+        "sort": "date",
+        "order": "desc"
+      },
+      "fields": [
+        {
+          "name": "slug",
+          "label": "Identifiant URL : lettres minuscules et tirets",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "published",
+          "label": "Publier sur le site (le fichier reste public même désactivé)",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "date",
+          "label": "Date de publication",
+          "type": "date",
+          "required": true
+        },
+        {
+          "name": "type",
+          "label": "Format",
+          "type": "select",
+          "required": true,
+          "options": {
+            "values": [
+              {
+                "label": "Analyse",
+                "name": "analysis"
+              },
+              {
+                "label": "Recherche",
+                "name": "research"
+              },
+              {
+                "label": "Note de lecture",
+                "name": "note"
+              }
+            ]
+          }
+        },
+        {
+          "name": "discipline",
+          "label": "Discipline",
+          "type": "select",
+          "options": {
+            "values": [
+              "European affairs",
+              "Security and defence",
+              "International relations",
+              "History"
+            ]
+          },
+          "required": true
+        },
+        {
+          "name": "access",
+          "label": "Diffusion du document",
+          "type": "select",
+          "required": true,
+          "options": {
+            "values": [
+              {
+                "label": "PDF sur demande — ne pas téléverser le PDF",
+                "name": "request"
+              },
+              {
+                "label": "PDF public avec lecteur intégré",
+                "name": "public"
+              },
+              {
+                "label": "Texte seul sans PDF",
+                "name": "none"
+              }
+            ]
+          }
+        },
+        {
+          "name": "pdf",
+          "label": "PDF PUBLIC uniquement (laisser vide pour un document sur demande)",
+          "type": "file"
+        },
+        {
+          "name": "fr",
+          "label": "Version française",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Titre",
+              "type": "string"
+            },
+            {
+              "name": "summary",
+              "label": "Résumé public",
+              "type": "text"
+            },
+            {
+              "name": "body",
+              "label": "Texte public (paragraphes séparés par une ligne vide)",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "en",
+          "label": "English version",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Titre",
+              "type": "string"
+            },
+            {
+              "name": "summary",
+              "label": "Résumé public",
+              "type": "text"
+            },
+            {
+              "name": "body",
+              "label": "Texte public (paragraphes séparés par une ligne vide)",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
