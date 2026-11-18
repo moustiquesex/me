@@ -24,6 +24,7 @@ jobs:
       - run: npm ci
       - run: npm --prefix observatory ci
       - run: sudo apt-get update && sudo apt-get install -y qpdf file
+      - run: node scripts/validate-images.mjs
       - run: node scripts/validate-pdfs.mjs
       - run: node scripts/build.mjs --production
       - run: npm --prefix observatory run build

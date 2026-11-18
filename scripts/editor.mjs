@@ -7,6 +7,7 @@ import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 import {PDFDocument} from 'pdf-lib';
 import sanitizeHtml from 'sanitize-html';
+import {cleanImage,imageExists,imageLimit} from './images.mjs';
 const run = promisify(execFile);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const origin = 'http://127.0.0.1:4174';
@@ -56,6 +57,7 @@ const server = http.createServer(async (req,res) => {
       res.writeHead(200,{'Content-Type':url.pathname.endsWith('.js')?'text/javascript; charset=utf-8':'text/css; charset=utf-8'});
       return res.end(await fs.readFile(file));
     }
+    if(req.method==='GET' && /^\/media\/[a-f0-9-]{36}\.webp$/.test(url.pathname)){const target=await imageExists(root,url.pathname);res.writeHead(200,{'Content-Type':'image/webp'});return res.end(await fs.readFile(target));}
     const supplied = Buffer.from(req.headers['x-editor-token'] || '');
     const expected = Buffer.from(token);
     if (supplied.length !== expected.length || !timingSafeEqual(supplied,expected)) return respond(res,403,{error:'Session refusée.'});
@@ -67,6 +69,10 @@ const server = http.createServer(async (req,res) => {
       return respond(res,200,posts.sort((a,b)=>b.date.localeCompare(a.date)));
     }
     if (publishing && req.method === 'POST') return respond(res,409,{error:'Publication en cours. Réessayez après sa fin.'});
+    
+    if(req.method==='POST' && url.pathname==='/api/image'){
+      const bytes=await body(req,imageLimit);const clean=await cleanImage(bytes,req.headers['content-type']);const name=randomUUID()+'.webp';await fs.mkdir(path.join(root,'media'),{recursive:true});await fs.writeFile(path.join(root,'media',name),clean,{flag:'wx'});return respond(res,200,{image:'/media/'+name});
+    }
     if (req.method === 'POST' && url.pathname === '/api/upload') {
       if (req.headers['content-type'] !== 'application/pdf') return respond(res,415,{error:'Type MIME attendu : application/pdf.'});
       const bytes = await body(req,maximum);
@@ -95,6 +101,13 @@ const server = http.createServer(async (req,res) => {
       if (post.access === 'public' && !/^\/uploads\/[a-f0-9-]{36}\.pdf$/.test(post.pdf)) throw new Error('Sélectionnez un PDF téléversé dans cet éditeur.');
       if (post.access !== 'public') post.pdf = '';
       post.published = Boolean(input.published);
+      if(input.tags && (!Array.isArray(input.tags)||input.tags.length>8||input.tags.some(t=>typeof t!=='string'||t.length>40)))throw Error('8 tags maximum, 40 caractères par tag.');
+      post.tags=[...new Set((input.tags||[]).map(t=>t.trim()).filter(Boolean))];
+      post.image=String(input.image||'');post.imageAlt=String(input.imageAlt||'').trim();post.imageCredit=String(input.imageCredit||'').trim();post.imageSource=String(input.imageSource||'').trim();post.imageOwnership=String(input.imageOwnership||'own');
+      if(!['own','third-party'].includes(post.imageOwnership))throw Error('Droits de l’image invalides.');
+      for(const key of ['imageAlt','imageCredit','imageSource'])if(post[key].length>1000)throw Error('Champ image trop long.');
+      if(post.image){await imageExists(root,post.image);if(!post.imageAlt)throw Error('Décrivez l’image pour l’accessibilité.');if(post.imageOwnership==='third-party'&&(!post.imageCredit||!post.imageSource))throw Error('Indiquez le crédit et la source de l’image de tiers.');}
+      if(post.imageSource && new URL(post.imageSource).protocol!=='https:')throw Error('La source de l’image doit utiliser HTTPS.');
       for (const language of ['fr','en']) {
         const content = input[language] || {};
         post[language] = {title:String(content.title||''),summary:String(content.summary||''),bodyFormat:'html',body:sanitizeHtml(content.body||'',htmlOptions)};
@@ -106,7 +119,7 @@ const server = http.createServer(async (req,res) => {
     if (req.method === 'POST' && url.pathname === '/api/publish') {
       publishing = true;
       try {
-        await run('git',['add','--','content/publications','uploads'],{cwd:root});
+        await run('git',['add','--','content/publications','uploads','media'],{cwd:root});
         const {stdout} = await run('git',['diff','--cached','--name-only'],{cwd:root});
         if (stdout.trim()) await run('git',['commit','-m','Update publications from private editor'],{cwd:root});
         await run('git',['push','origin','main'],{cwd:root,timeout:120000});

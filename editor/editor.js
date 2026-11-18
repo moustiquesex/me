@@ -4,8 +4,9 @@ let posts = [];
 let current = {};
 let language = 'fr';
 let pdf = '';
+let image='';
 let savedSelection;
-const metadata = ['slug','date','type','discipline','access','source','publisher'];
+const metadata = ['slug','date','type','discipline','access','source','publisher','imageAlt','imageCredit','imageSource','imageOwnership'];
 async function api(route, value, contentType='application/json') {
   const options = {headers:{'X-Editor-Token':token}};
   if (value !== undefined) {
@@ -33,8 +34,8 @@ function showLanguage() {
   document.querySelectorAll('[data-lang]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===language)));
 }
 function load(post={}) {
-  current = structuredClone(post); language='fr'; pdf=post.pdf || '';
-  metadata.forEach(key=>byId(key).value=post[key] || ({date:new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Shanghai'}).format(new Date()),type:'analysis',discipline:'International relations',access:'none'}[key] || ''));
+  current = structuredClone(post); language='fr'; pdf=post.pdf || '';image=post.image||'';byId('tags').value=(post.tags||[]).join(', ');byId('image-upload').value='';showImage();showTags();
+  metadata.forEach(key=>byId(key).value=post[key] || ({date:new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Shanghai'}).format(new Date()),imageOwnership:'own',type:'analysis',discipline:'International relations',access:'none'}[key] || ''));
   byId('slug').readOnly=Boolean(post.slug);
   byId('published').checked=Boolean(post.published);
   byId('pdf-name').textContent=pdf;
@@ -42,7 +43,7 @@ function load(post={}) {
 }
 async function refresh() {
   posts=await api('/api/posts'); const select=byId('posts'); select.replaceChildren(new Option('Choisir',''));
-  posts.forEach(post=>select.add(new Option(`${post.date} — ${post.fr?.title || post.en?.title}`,post.slug)));
+  posts.forEach(post=>select.add(new Option(`${post.date} - ${post.fr?.title || post.en?.title}`,post.slug)));
 }
 byId('new').addEventListener('click',()=>load());
 byId('posts').addEventListener('change',()=>load(posts.find(post=>post.slug===byId('posts').value)));
@@ -90,7 +91,7 @@ byId('upload').addEventListener('change',async()=>{
  catch(error){status(error.message);byId('upload').value='';}
 });
 async function save() {
- storeLanguage();metadata.forEach(key=>current[key]=byId(key).value);current.pdf=pdf;current.published=byId('published').checked;
+ storeLanguage();metadata.forEach(key=>current[key]=byId(key).value);current.pdf=pdf;current.image=image;current.tags=byId('tags').value.split(',').map(t=>t.trim()).filter(Boolean);current.published=byId('published').checked;
  const result=await api('/api/save',current);byId('slug').readOnly=true;await refresh();status(result.message);
 }
 byId('save').addEventListener('click',()=>save().catch(error=>status(error.message)));
@@ -100,3 +101,11 @@ byId('publish').addEventListener('click',async()=>{
  }catch(error){status(error.message);}finally{byId('publish').disabled=false;}
 });
 refresh().then(()=>load()).catch(error=>status(error.message));
+
+function showImage(){byId('image-name').textContent=image;const preview=byId('image-preview');preview.hidden=!image;if(image)preview.src=image;else preview.removeAttribute('src');}
+function showTags(){byId('tag-preview').replaceChildren(...byId('tags').value.split(',').map(t=>t.trim()).filter(Boolean).map(t=>{const span=document.createElement('span');span.textContent=t;return span;}));}
+byId('tags').addEventListener('input',showTags);
+byId('remove-image').addEventListener('click',()=>{image='';byId('image-upload').value='';showImage();});
+byId('image-upload').addEventListener('change',async()=>{const file=byId('image-upload').files[0];if(!file)return;try{if(file.size>5*1024*1024)throw Error('Image limitée à 5 Mio.');status('Vérification et réencodage de l’image.');const result=await api('/api/image',file,file.type);image=result.image;showImage();status('Image contrôlée, métadonnées retirées et nom aléatoire attribué.');}catch(e){status(e.message);byId('image-upload').value='';}});
+
+document.querySelectorAll('[data-tag]').forEach(button=>button.addEventListener('click',()=>{const tags=byId('tags').value.split(',').map(t=>t.trim()).filter(Boolean);if(!tags.includes(button.dataset.tag)&&tags.length<8)tags.push(button.dataset.tag);byId('tags').value=tags.join(', ');showTags();}));

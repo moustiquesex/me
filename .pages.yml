@@ -395,6 +395,12 @@
           "name": "publisher",
           "label": "Organisme éditeur (optionnel)",
           "type": "string"
+        },
+        {
+          "name": "tags",
+          "label": "Tags (English)",
+          "type": "string",
+          "list": true
         }
       ]
     }

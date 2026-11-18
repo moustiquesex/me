@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/validate-pdfs.mjs && node scripts/build.mjs && npm --prefix observatory run build",
+    "build": "node scripts/validate-images.mjs && node scripts/validate-pdfs.mjs && node scripts/build.mjs && npm --prefix observatory run build",
     "check": "node scripts/check.mjs",
     "preview": "node scripts/serve.mjs",
     "editor": "node scripts/editor.mjs"
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "pdf-lib": "^1.17.1",
-    "sanitize-html": "^2.18.2"
+    "sanitize-html": "^2.18.2",
+    "sharp": "^0.35.5"
   }
 }
