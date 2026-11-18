@@ -24,3 +24,6 @@ window.addEventListener('resize',()=>{if(loop)jump(step()*count);});
 track.addEventListener('keydown',e=>{if(e.target===track&&(e.key==='ArrowRight'||e.key==='ArrowLeft')){e.preventDefault();move(e.key==='ArrowRight'?1:-1);}});
 track.addEventListener('wheel',e=>{if(!loop||e.ctrlKey)return;e.preventDefault();const delta=(Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY)*(e.deltaMode===1?20:e.deltaMode===2?track.clientWidth:1);normalize();track.scrollLeft+=delta;},{passive:false});
 if(loop)requestAnimationFrame(()=>jump(step()*count));
+const languagePopup=document.querySelector('.language-banner');
+languagePopup?.querySelector('.language-close')?.addEventListener('click',()=>{languagePopup.hidden=true;});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&languagePopup&&!languagePopup.hidden){const focused=languagePopup.contains(document.activeElement);languagePopup.hidden=true;if(focused)document.querySelector('.languages a[lang="fr"]')?.focus();}});
