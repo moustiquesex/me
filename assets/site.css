@@ -57,3 +57,4 @@ html[data-theme=dark]{--ink:#f4f7fb;--muted:#d9e4ed;--paper:#101c2a;--white:#182
 
 .navlinks a:hover,.pub-row:hover{background:#e1edf6!important;color:#10385b!important}html[data-theme=dark] .pub-row:hover,html[data-theme=dark] .navlinks a:hover{background:#294b68!important}.text-link:hover,.contact-links a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
 .navlinks a:hover,.pub-row:hover{background:transparent!important;color:#061f36!important}html[data-theme=dark] .navlinks a:hover,html[data-theme=dark] .pub-row:hover{background:transparent!important;color:#fff!important}.text-link:hover,.contact-links a:hover{text-decoration:none;color:#061f36}
+.pub-row:hover{background:#e1edf6!important;color:#10385b!important}html[data-theme=dark] .pub-row:hover{background:#294b68!important;color:#fff!important}
