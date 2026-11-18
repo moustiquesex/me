@@ -3,3 +3,5 @@
 .image-fields{border:1px solid #aaa;margin:24px 0;padding:20px}#image-preview{width:240px;max-width:100%;aspect-ratio:16/10;object-fit:cover;margin:14px 0}#tag-preview{display:flex;gap:8px;flex-wrap:wrap}#tag-preview span{border:1px solid #aaa;border-radius:999px;padding:4px 10px;font-size:13px}
 
 .tag-suggestions{display:flex;gap:6px;flex-wrap:wrap}.tag-suggestions button{border-radius:999px;font-size:12px;padding:5px 9px}
+
+#status:not(:empty){position:fixed;bottom:16px;left:16px;right:16px;z-index:20;max-width:900px;margin:auto;padding:16px 20px;background:#fff;color:#102b40;border:2px solid #174a80;line-height:1.5}body{padding-bottom:90px}

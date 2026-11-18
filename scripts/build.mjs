@@ -117,7 +117,7 @@ fs.copyFileSync(path.join(out,'en/index.html'),path.join(out,'index.html'));
 write('/404.html',layout('en','home',`Page not found - ${site.name}`,'Page not found',`<div class="wrap notfound"><p class="eyebrow">404</p><h1>${dict.en.notfound}</h1><p>${dict.en.notfoundtext}</p>${button('/en/','Home')} <a href="/fr/">Accueil en français</a></div>`).replace(/content="index, follow, max-image-preview:large"/g,'content="noindex, follow"'),false);
 entries.push('/observatory/');
 fs.writeFileSync(path.join(out,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${entries.map(p=>`<url><loc>${esc(url(p))}</loc></url>`).join('')}</urlset>`);
-fs.writeFileSync(path.join(out,'robots.txt'),`User-agent: *\nAllow: /\nDisallow: /fr/admin/\nDisallow: /en/admin/\nSitemap: ${url('/sitemap.xml')}\n`);
+fs.writeFileSync(path.join(out,'robots.txt'),`User-agent: Google-Extended\nAllow: /\nDisallow: /fr/admin/\nDisallow: /en/admin/\n\nUser-agent: *\nAllow: /\nDisallow: /fr/admin/\nDisallow: /en/admin/\nSitemap: ${url('/sitemap.xml')}\n`);
 fs.writeFileSync(path.join(out,'CNAME'),new URL(site.url).hostname+'\n'); fs.writeFileSync(path.join(out,'.nojekyll'),'');
 console.log(`Built ${entries.length} indexable routes, bilingual author access, root and 404. Mode: ${site.ready?'production':'preview (noindex)'}.`);
 

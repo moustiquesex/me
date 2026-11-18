@@ -1,4 +1,4 @@
-const token = document.querySelector('meta[name="editor-token"]').content;
+let token = document.querySelector('meta[name="editor-token"]').content;
 const byId = id => document.getElementById(id);
 let posts = [];
 let current = {};
@@ -13,12 +13,13 @@ async function api(route, value, contentType='application/json') {
     options.method = 'POST'; options.headers['Content-Type'] = contentType;
     options.body = contentType === 'application/json' ? JSON.stringify(value) : value;
   }
-  const response = await fetch(route, options);
+  let response;try{response=await fetch(route,options);}catch{throw Error('Éditeur local arrêté ou inaccessible. Votre saisie reste dans le formulaire. Relancez npm run editor.');}
+  if(response.status===403){const html=await(await fetch('/')).text();const fresh=html.match(/name="editor-token" content="([^"]+)"/);if(fresh){token=fresh[1];options.headers['X-Editor-Token']=token;response=await fetch(route,options);}}
   const result = await response.json();
   if (!response.ok) throw new Error(result.error || 'Requête échouée.');
   return result;
 }
-function status(message) { byId('status').textContent = message; }
+function status(message) { byId('status').textContent = message; byId('status').hidden=!message; }
 function storeLanguage() {
   current[language] = {title:byId('title').value, summary:byId('summary').value, body:byId('body').innerHTML, bodyFormat:'html'};
 }
@@ -91,6 +92,8 @@ byId('upload').addEventListener('change',async()=>{
  catch(error){status(error.message);byId('upload').value='';}
 });
 async function save() {
+ if(!byId('slug').value.trim()){byId('slug').value=byId('title').value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,100).replace(/-$/,'');}
+ status('Enregistrement en cours.');
  storeLanguage();metadata.forEach(key=>current[key]=byId(key).value);current.pdf=pdf;current.image=image;current.tags=byId('tags').value.split(',').map(t=>t.trim()).filter(Boolean);current.published=byId('published').checked;
  const result=await api('/api/save',current);byId('slug').readOnly=true;await refresh();status(result.message);
 }
@@ -100,7 +103,7 @@ byId('publish').addEventListener('click',async()=>{
  byId('publish').disabled=true;status('Envoi vers GitHub en cours.');const result=await api('/api/publish',{});status(result.message);
  }catch(error){status(error.message);}finally{byId('publish').disabled=false;}
 });
-refresh().then(()=>load()).catch(error=>status(error.message));
+refresh().then(()=>{let draft;try{draft=JSON.parse(localStorage.getItem('bouhiere-editor-draft')||'null');}catch{}if(draft&&confirm('Restaurer la saisie de secours conservée dans ce navigateur ?')){load(draft);status('Saisie restaurée. Enregistrez-la pour la conserver dans le dossier du site.');}else load();}).catch(error=>status(error.message));
 
 function showImage(){byId('image-name').textContent=image;const preview=byId('image-preview');preview.hidden=!image;if(image)preview.src=image;else preview.removeAttribute('src');}
 function showTags(){byId('tag-preview').replaceChildren(...byId('tags').value.split(',').map(t=>t.trim()).filter(Boolean).map(t=>{const span=document.createElement('span');span.textContent=t;return span;}));}
@@ -109,3 +112,5 @@ byId('remove-image').addEventListener('click',()=>{image='';byId('image-upload')
 byId('image-upload').addEventListener('change',async()=>{const file=byId('image-upload').files[0];if(!file)return;try{if(file.size>5*1024*1024)throw Error('Image limitée à 5 Mio.');status('Vérification et réencodage de l’image.');const result=await api('/api/image',file,file.type);image=result.image;showImage();status('Image contrôlée, métadonnées retirées et nom aléatoire attribué.');}catch(e){status(e.message);byId('image-upload').value='';}});
 
 document.querySelectorAll('[data-tag]').forEach(button=>button.addEventListener('click',()=>{const tags=byId('tags').value.split(',').map(t=>t.trim()).filter(Boolean);if(!tags.includes(button.dataset.tag)&&tags.length<8)tags.push(button.dataset.tag);byId('tags').value=tags.join(', ');showTags();}));
+
+let draftTimer;document.querySelector('main').addEventListener('input',()=>{clearTimeout(draftTimer);draftTimer=setTimeout(()=>{storeLanguage();const draft=structuredClone(current);metadata.forEach(k=>draft[k]=byId(k).value);draft.pdf=pdf;draft.image=image;draft.tags=byId('tags').value.split(',').map(t=>t.trim()).filter(Boolean);draft.published=byId('published').checked;for(const l of ['fr','en'])if(draft[l]){const parsed=new DOMParser().parseFromString(draft[l].body||'','text/html');draft[l].body=parsed.body.textContent;draft[l].bodyFormat='text';}try{localStorage.setItem('bouhiere-editor-draft',JSON.stringify(draft));}catch{}},400);});
