@@ -21,7 +21,7 @@ if(api){
    if(!states.has(slug))await load();
    if(!token){token=crypto.randomUUID();try{localStorage.setItem(key,JSON.stringify({token,expires:Date.now()+365*86400000}));}catch{}}
    const result=await request(api,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug,liked:!states.get(slug)?.liked})});
-   states.set(slug,{count:result.count,liked:result.liked});announce(english?(result.liked?'Appreciation recorded.':'Appreciation removed.'):(result.liked?'Appréciation enregistrée.':'Appréciation retirée.'));
+   states.set(slug,{count:result.count,liked:result.liked});if(result.liked){for(const card of reactionTrack.children){if(card.dataset.slug!==slug)continue;const heart=card.querySelector('.heart');heart.classList.remove('just-liked');void heart.offsetWidth;heart.classList.add('just-liked');setTimeout(()=>heart.classList.remove('just-liked'),600);}}announce(english?(result.liked?'Appreciation recorded.':'Appreciation removed.'):(result.liked?'Appréciation enregistrée.':'Appréciation retirée.'));
   }catch(error){announce(error.message==='429'?(english?'Too many requests. Please try again later.':'Trop de demandes. Réessayez plus tard.'):(english?'The reaction could not be saved. Please try again.':'La réaction n’a pas pu être enregistrée. Réessayez.'),true);}
   finally{pending.delete(slug);draw(slug);}
  });
