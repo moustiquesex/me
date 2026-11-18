@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "wrangler": "^4.164.0"
+  },
+  "name": "bouhiere-reactions",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local --port 8787",
+    "test": "node test/http.mjs",
+    "deploy": "wrangler deploy"
+  }
+}

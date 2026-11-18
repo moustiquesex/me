@@ -13,7 +13,7 @@ const originals=[...track.children],count=originals.length,loop=count>3;
 shell.classList.toggle('has-carousel',loop);
 if(loop){const copy=article=>{const node=article.cloneNode(true);node.setAttribute('aria-hidden','true');node.querySelectorAll('a,button').forEach(el=>el.tabIndex=-1);return node;};for(const article of originals)track.append(copy(article));for(const article of originals.toReversed())track.prepend(copy(article));}
 const likes=new Set();
-track.addEventListener('click',e=>{const button=e.target.closest('.heart');if(!button)return;const slug=button.closest('article').dataset.slug;likes.has(slug)?likes.delete(slug):likes.add(slug);for(const card of track.children){if(card.dataset.slug!==slug)continue;const b=card.querySelector('.heart');b.setAttribute('aria-pressed',String(likes.has(slug)));b.querySelector('span').textContent=likes.has(slug)?'1':'0';}document.getElementById('status').textContent=english?(likes.has(slug)?'Like added.':'Like removed.'):(likes.has(slug)?'Appréciation ajoutée.':'Appréciation retirée.');});
+track.addEventListener('click',e=>{if(track.dataset.reactionsApi)return;const button=e.target.closest('.heart');if(!button)return;const slug=button.closest('article').dataset.slug;likes.has(slug)?likes.delete(slug):likes.add(slug);for(const card of track.children){if(card.dataset.slug!==slug)continue;const b=card.querySelector('.heart');b.setAttribute('aria-pressed',String(likes.has(slug)));b.querySelector('span').textContent=likes.has(slug)?'1':'0';}document.getElementById('status').textContent=english?(likes.has(slug)?'Like added.':'Like removed.'):(likes.has(slug)?'Appréciation ajoutée.':'Appréciation retirée.');});
 function step(){return track.children[1].offsetLeft-track.children[0].offsetLeft;}
 function jump(left){track.classList.add('repositioning');track.scrollLeft=left;requestAnimationFrame(()=>track.classList.remove('repositioning'));}
 function normalize(){if(!loop)return;const cycle=step()*count;if(track.scrollLeft<cycle-2)jump(track.scrollLeft+cycle);else if(track.scrollLeft>=cycle*2-2)jump(track.scrollLeft-cycle);}
@@ -28,3 +28,4 @@ const languagePopup=document.querySelector('.language-banner');
 languagePopup?.querySelector('.language-close')?.addEventListener('click',()=>{languagePopup.hidden=true;});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&languagePopup&&!languagePopup.hidden){const focused=languagePopup.contains(document.activeElement);languagePopup.hidden=true;if(focused)document.querySelector('.languages a[lang="fr"]')?.focus();}});
 if(languagePopup){setTimeout(()=>{if(languagePopup.hidden)return;languagePopup.classList.add('is-dismissing');setTimeout(()=>{languagePopup.hidden=true;},450);},10000);}
+
