@@ -18,3 +18,8 @@
 @media(max-width:374px){body>header{gap:6px;padding:7px 8px}.logo{font-size:22px}body>header>nav{gap:7px;font-size:12px}.languages{gap:4px;font-size:11px}#theme{width:28px}.banner-inner h1{font-size:27px}}
 body:has(.language-banner:not([hidden])) .banner-inner{padding-top:144px}
 @media(max-width:720px){body:has(.language-banner:not([hidden])) .banner-inner{padding-top:120px}}
+/* Balanced desktop hero; mobile name aligned with the portrait. */
+@media(min-width:721px){.banner-inner,body:has(.language-banner:not([hidden])) .banner-inner{padding-top:64px;padding-bottom:64px;align-items:start}.banner-inner h1{margin:0 0 22px}.banner-inner>div{display:flex;flex-direction:column;align-items:flex-start}.banner-inner .primary{margin-bottom:0}.banner figure{height:100%;min-height:0;position:relative;align-self:stretch}.banner figure img{position:absolute;inset:0;object-fit:cover}}
+@media(max-width:720px){.banner-inner h1{align-self:start;margin-top:0}}
+.language-banner{opacity:1;transition:opacity .45s ease}.language-banner.is-dismissing{opacity:0;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.language-banner{transition:none}}

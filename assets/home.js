@@ -27,3 +27,4 @@ if(loop)requestAnimationFrame(()=>jump(step()*count));
 const languagePopup=document.querySelector('.language-banner');
 languagePopup?.querySelector('.language-close')?.addEventListener('click',()=>{languagePopup.hidden=true;});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&languagePopup&&!languagePopup.hidden){const focused=languagePopup.contains(document.activeElement);languagePopup.hidden=true;if(focused)document.querySelector('.languages a[lang="fr"]')?.focus();}});
+if(languagePopup){setTimeout(()=>{if(languagePopup.hidden)return;languagePopup.classList.add('is-dismissing');setTimeout(()=>{languagePopup.hidden=true;},450);},10000);}

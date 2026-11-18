@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -19,5 +20,6 @@ export function homePage(language,site,posts,head,context){
  }).join('');
  const template=fs.readFileSync(path.join(root,'templates',`home-${language}.html`),'utf8');
  const body=template.replace('{{ARTICLES}}',cards).replace('{{INTRO}}',escape(site[language].intro)).replace('{{CONTEXT}}',`<p class="publication-context">${escape(context)}</p>`);
- return head.split('<body>')[0].replace('/assets/site.css','/assets/home.css').replace('/assets/site.js','/assets/home.js')+'<body>'+body+'</body></html>';
+ const version=name=>createHash('sha256').update(fs.readFileSync(path.join(root,'assets',name))).digest('hex').slice(0,12);
+ return head.split('<body>')[0].replace('/assets/site.css','/assets/home.css?v='+version('home.css')).replace('/assets/site.js','/assets/home.js?v='+version('home.js'))+'<body>'+body+'</body></html>';
 }
