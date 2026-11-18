@@ -1,17 +1,17 @@
 # Shared publication reactions
 
-Prepared for the Cloudflare Workers Free plan and D1 Free. The website stays on GitHub Pages. No billing upgrade is required or configured. The service is not active until the account connection, database and endpoint are configured.
+Deployed for Cloudflare Workers Free and D1 Free. The website stays on GitHub Pages. No billing upgrade was enabled. Endpoint: https://bouhiere-reactions.bouhiere-reactions.workers.dev/v1/reactions. The dedicated D1 database uses the EU jurisdiction.
 
 ## Deployment
 
-1. From this directory, run `npm ci`, then `npx wrangler login --scopes account:read user:read workers:write d1:write`. Sign in directly to Cloudflare. Never put account credentials in site content or browser code.
-2. Create `bouhiere-reactions` with `npx wrangler d1 create bouhiere-reactions`. Put the returned database UUID in `wrangler.jsonc`. Keep the account on Workers Free.
+1. From this directory, run `npm ci`, then `npx wrangler login --scopes account:read user:read workers:write workers_scripts:write d1:write`. Sign in directly to Cloudflare. Never put account credentials in site content or browser code.
+2. Create `bouhiere-reactions` with `npx wrangler d1 create bouhiere-reactions --jurisdiction eu`. Put the returned database UUID in `wrangler.jsonc`. Keep the account on Workers Free.
 3. Run `npx wrangler d1 migrations apply bouhiere-reactions --remote` for this new, dedicated database.
 4. Generate a random 32-byte secret and supply it through stdin to `npx wrangler secret put RATE_SECRET`. Do not put it in the repository or command arguments.
 5. Run `npx wrangler deploy`. Verify GET and POST against the returned workers.dev URL. The public endpoint is `/v1/reactions`.
 6. Set `reactionsApi` in `content/site.json` to the verified HTTPS endpoint. Build and check the website. This enables the shared UI, its CSP connect-src permission and the corresponding privacy section together. Then publish GitHub Pages.
 
-Do not set `reactionsApi` before deployment works. The current public site remains unchanged until that activation.
+Do not set `reactionsApi` before deployment works. This installation is now activated in content/site.json.
 
 ## Behaviour and limits
 
@@ -35,3 +35,6 @@ Create an ignored `.dev.vars` containing a random `RATE_SECRET`. Then:
 The HTTP test changes only the local database. It checks shared counts, concurrent retries, removal, validation and rate limiting. Wait for the next minute before repeating after the rate-limit test. It checks existing article URLs on bouhiere.eu; no votes are sent to a production API.
 
 Cloudflare Free quotas apply to the whole account. See https://developers.cloudflare.com/workers/platform/limits/ and https://developers.cloudflare.com/d1/platform/pricing/.
+
+
+Deployment note: Wrangler 4.164 uploaded the script successfully but its beta workers/workers lookup failed. The published deployment was verified through the stable scripts API, then the subdomain was enabled with POST /accounts/{account}/workers/scripts/bouhiere-reactions/subdomain and the hourly schedule with PUT .../schedules. Both endpoints use the existing OAuth authorization. Verify deployment state before retrying a failed command; do not recreate the database.

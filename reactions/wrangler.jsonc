@@ -4,13 +4,24 @@
   "main": "src/worker.js",
   "compatibility_date": "2026-11-18",
   "workers_dev": true,
-  "observability": { "enabled": false },
-  "vars": { "SITE_ORIGIN": "https://bouhiere.eu" },
-  "triggers": { "crons": ["17 * * * *"] },
-  "d1_databases": [{
-    "binding": "DB",
-    "database_name": "bouhiere-reactions",
-    "database_id": "00000000-0000-0000-0000-000000000000",
-    "migrations_dir": "migrations"
-  }]
+  "observability": {
+    "enabled": false
+  },
+  "vars": {
+    "SITE_ORIGIN": "https://bouhiere.eu"
+  },
+  "triggers": {
+    "crons": [
+      "17 * * * *"
+    ]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "bouhiere-reactions",
+      "database_id": "5c75bfae-52ca-43dc-a157-12890334bb3d",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "account_id": "d5b2d356b30bf4371497697f0c4367fc"
 }

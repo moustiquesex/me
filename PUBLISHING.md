@@ -13,7 +13,7 @@ Ouvrir http://127.0.0.1:4174. Choisir une publication ou « Nouvelle publication
 
 « Enregistrer » conserve les changements sur cet ordinateur. « Envoyer sur GitHub » les pousse avec la session GitHub autorisée. GitHub Actions valide les images et PDF avant de publier. Aucun jeton GitHub n'est envoyé au navigateur public. Les fichiers du dépôt sont publics, même pour une publication non affichée. Ne pas téléverser un PDF destiné uniquement à être envoyé sur demande.
 
-Les coeurs de la page d'accueil sont une interaction en mémoire dans l'onglet : ils ne représentent pas un compteur collectif et se réinitialisent au rechargement. Aucun serveur de votes, cookie ou stockage persistant n'est utilisé. Un compteur partagé nécessiterait un service serveur distinct.
+Les cœurs sont partagés entre les visiteurs grâce à Cloudflare Workers et D1, tout en conservant GitHub Pages pour le site. Le total apparaît sous chaque publication, identique dans les versions française et anglaise. Un identifiant de navigateur est créé uniquement au premier clic, pour retrouver ou retirer la réaction. Les réactions expirent après 365 jours. Ce compteur ne révèle pas l’identité des visiteurs et ne mesure pas des personnes uniques. Aucun abonnement payant n’a été activé. La configuration et les tests du service sont documentés dans reactions/README.md. Les ajouts de publications via le portail ne nécessitent pas de redéployer le compteur.
 
 ## Contrôles
 

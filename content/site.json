@@ -89,5 +89,6 @@
     "languages": "French: native. English: C1 speaking and writing, C2 listening and reading (self-reported CV levels)."
   },
   "orcid": "https://orcid.org/0009-0005-9016-2971",
-  "googleSiteVerification": "kthWMXHswVh1LLWiPMkgQeg-ZMALgKI5iBNQyweiTpk"
+  "googleSiteVerification": "kthWMXHswVh1LLWiPMkgQeg-ZMALgKI5iBNQyweiTpk",
+  "reactionsApi": "https://bouhiere-reactions.bouhiere-reactions.workers.dev/v1/reactions"
 }
