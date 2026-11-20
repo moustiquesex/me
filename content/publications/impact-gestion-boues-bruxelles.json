@@ -1,0 +1,41 @@
+{
+  "slug": "impact-gestion-boues-bruxelles",
+  "published": true,
+  "date": "2026-11-20",
+  "type": "research",
+  "discipline": "History",
+  "access": "public",
+  "pdf": "/uploads/42af91c2-d4e2-4f15-b0dd-89dc36415c5c.pdf",
+  "authors": [
+    "Idriss Bouhière"
+  ],
+  "role": {
+    "fr": "Travail de recherche en histoire. Mise en ligne le 20 novembre 2026 ; date de rédaction non précisée dans le document.",
+    "en": "Historical research paper. Published on this website on 20 November 2026; the document does not specify its completion date."
+  },
+  "fr": {
+    "title": "L’impact de la gestion des boues à Bruxelles durant les XVIIIe et XIXe siècles",
+    "summary": "Comment le retrait des boues et immondices transformait-il l’environnement des Bruxellois ? Cette recherche croise le Dictionnaire de police municipale de Van Bersel (1842) et les archives de la Ville de Bruxelles. Elle étudie le nettoiement des rues, la Ferme des boues, la valorisation agricole des déchets et les transitions liées à l’industrialisation, aux égouts et aux préoccupations de salubrité.",
+    "body": "Le document intégral de 26 pages est disponible ci-dessous en français. La recherche articule histoire urbaine, histoire environnementale et critique des sources administratives."
+  },
+  "en": {
+    "title": "The impact of waste management in Brussels during the eighteenth and nineteenth centuries",
+    "summary": "How did the removal of street mud and refuse shape the environment of Brussels residents? This study combines Van Bersel’s municipal police dictionary (1842) with records from the Brussels City Archives. It examines street cleaning, the Ferme des boues, the agricultural reuse of urban waste and changes associated with industrialisation, sewerage and public health concerns.",
+    "body": "The complete 26-page paper is available below in French. The research brings together urban history, environmental history and the critical analysis of administrative sources."
+  },
+  "tags": [
+    "History",
+    "Urban History",
+    "Environmental History",
+    "Brussels",
+    "Belgium",
+    "Waste Management",
+    "Public Health",
+    "Archival Research"
+  ],
+  "image": "/media/3d52e5ba-a151-44c7-a499-e8f4f3d7b9b0.webp",
+  "imageAlt": "Vue historique de la Ferme des boues à Bruxelles, au bord du canal.",
+  "imageCredit": "Photographie historique fournie par l’auteur ; photographe et provenance non précisés.",
+  "imageSource": "https://bouhiere.eu/fr/publications/impact-gestion-boues-bruxelles/",
+  "imageOwnership": "third-party"
+}
