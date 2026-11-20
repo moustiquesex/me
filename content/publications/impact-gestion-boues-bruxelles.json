@@ -5,6 +5,7 @@
   "type": "research",
   "discipline": "History",
   "access": "public",
+  "citationTitle": "L’impact de la gestion des boues à Bruxelles durant les XVIIIe et XIXe siècles",
   "pdf": "/uploads/42af91c2-d4e2-4f15-b0dd-89dc36415c5c.pdf",
   "authors": [
     "Idriss Bouhière"
@@ -35,7 +36,7 @@
   ],
   "image": "/media/3d52e5ba-a151-44c7-a499-e8f4f3d7b9b0.webp",
   "imageAlt": "Vue historique de la Ferme des boues à Bruxelles, au bord du canal.",
-  "imageCredit": "Photographie historique fournie par l’auteur ; photographe et provenance non précisés.",
-  "imageSource": "https://bouhiere.eu/fr/publications/impact-gestion-boues-bruxelles/",
+  "imageCredit": "Archives de la Ville de Bruxelles",
+  "imageSource": "https://archives.bruxelles.be/archives-en-ligne",
   "imageOwnership": "third-party"
 }
