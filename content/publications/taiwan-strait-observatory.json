@@ -1,0 +1,28 @@
+{
+  "slug": "taiwan-strait-observatory",
+  "date": "2026-09-15",
+  "published": true,
+  "type": "research",
+  "discipline": "International Relations",
+  "access": "none",
+  "tags": [
+    "Taiwan",
+    "International Security",
+    "Open Source Research"
+  ],
+  "authors": [
+    "Idriss Bouhière"
+  ],
+  "fr": {
+    "title": "Observatoire du détroit de Taïwan",
+    "summary": "Cette carte interactive retrace l’activité aérienne autour de Taïwan en août 2022. La chronologie permet de comparer les relevés quotidiens et de suivre les franchissements signalés de la ligne médiane du détroit.",
+    "bodyFormat": "html",
+    "body": "<p><a href=\"/observatory/\">Observer la carte</a></p>"
+  },
+  "en": {
+    "title": "Taiwan Strait Observatory",
+    "summary": "This interactive map traces air activity around Taiwan in August 2022. Its timeline lets readers compare daily reports and follow reported crossings of the Taiwan Strait’s median line.",
+    "bodyFormat": "html",
+    "body": "<p><a href=\"/observatory/?lang=en\">Explore the map</a></p>"
+  }
+}
