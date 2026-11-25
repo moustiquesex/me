@@ -6,6 +6,8 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function tagPills(post){return post.tags?.length?`<ul class="article-tags" aria-label="Tags" lang="en">${post.tags.map(tag=>`<li>${escape(tag)}</li>`).join('')}</ul>`:'';}
 export function imageFigure(post,lang){
+ const localized = post[lang];
+ if(localized?.image) post = {...post, image:localized.image, imageAlt:localized.imageAlt};
  if(!post.image)return '';
  const fr=lang==='fr',third=post.imageOwnership==='third-party';
  const credit=escape(post.imageCredit||'');
