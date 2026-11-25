@@ -26,7 +26,7 @@ export function homePage(language,site,posts,head,context){
  const template=fs.readFileSync(path.join(root,'templates',`home-${language}.html`),'utf8');
  let body=template.replace('{{ARTICLES}}',cards.join('')).replace('{{INTRO}}',introText(site[language].intro)).replace('{{CONTEXT}}',`<p class="publication-context">${escape(context)}</p>`);
  const version=name=>createHash('sha256').update(fs.readFileSync(path.join(root,'assets',name))).digest('hex').slice(0,12);
- let pageHead=head.split('<body>')[0].replace('/assets/site.css?v=20261119d','/assets/home.css?v='+version('home.css')).replace('/assets/site.js','/assets/home.js?v='+version('home.js'));
+ let pageHead=head.split('<body>')[0].replace('/assets/site.css?v=20261126a','/assets/home.css?v='+version('home.css')).replace('/assets/site.js','/assets/home.js?v='+version('home.js'));
  if(site.reactionsApi){
   const endpoint=new URL(site.reactionsApi);
   if(endpoint.protocol!=='https:'||endpoint.username||endpoint.password||endpoint.search||endpoint.hash||endpoint.pathname!=='/v1/reactions')throw Error('Invalid reactions API URL');

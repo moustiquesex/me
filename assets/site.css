@@ -60,3 +60,6 @@ html[data-theme=dark]{--ink:#f4f7fb;--muted:#d9e4ed;--paper:#101c2a;--white:#182
 .pub-row:hover{background:#e1edf6!important;color:#10385b!important}html[data-theme=dark] .pub-row:hover{background:#294b68!important;color:#fff!important}
 a:hover{color:#061f36!important}html[data-theme=dark] a:hover{color:#fff!important}button:hover{border-color:#174a80;color:#174a80}html[data-theme=dark] button:hover{color:#fff;border-color:#a5c8e5}
 @media(min-width:721px){body{zoom:.9}}
+
+.navlinks a, .navlinks a:hover, .navlinks a[aria-current="page"] { border-bottom: 0; text-decoration: none; }
+.navlinks a[aria-current="page"] { font-weight: 700; }
